@@ -41,8 +41,8 @@ services:
     restart: always
     privileged: true
     ports:
-    - "5004:5004"
-    #- "443:443"
+    - "80:80"
+    - "443:443"
     volumes:
     - ./entry/Caddyfile:/etc/Caddyfile
     - caddy_data:/root/.caddy

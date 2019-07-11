@@ -11,9 +11,9 @@ services:
     - LOG_TO_STDOUT=true
   mail:
     image: tvial/docker-mailserver:latest
-    hostname: ${HOSTNAME}
-    domainname: ${DOMAINNAME}
-    container_name: ${CONTAINER_NAME}
+    hostname: mail 
+    domainname: is-geek.com 
+    container_name: mail
     ports:
     - "25:25"
     - "143:143"
@@ -41,8 +41,9 @@ services:
     restart: always
     privileged: true
     ports:
-    - "80:80"
-    - "443:443"
+    - "5004:5004"    
+      #    - "8080:8080"
+      #- "8443:8443"
     volumes:
     - ./entry/Caddyfile:/etc/Caddyfile
     - caddy_data:/root/.caddy
